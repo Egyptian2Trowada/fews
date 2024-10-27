@@ -1,0 +1,145 @@
+/* إعادة تعيين القيم الافتراضية */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* إعدادات الجسم */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* خط جديد */
+    background: linear-gradient(135deg, #2c3e50, #34495e); /* تدرج للخلفية */
+    color: #ecf0f1; /* لون نص فاتح */
+    padding: 25px;
+}
+
+/* عنوان الصفحة */
+h1 {
+    color: #e74c3c; /* لون العنوان */
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 2.5em; /* حجم خط أكبر */
+    text-transform: uppercase; /* تحويل النص إلى أحرف كبيرة */
+    letter-spacing: 1px; /* تباعد بين الأحرف */
+}
+
+/* تصميم العناصر المدخلة */
+input[type="text"], input[type="file"], #searchInput {
+    width: calc(100% - 30px); /* تعديل ليتناسب مع الحواف */
+    padding: 12px;
+    border: 2px solid #2980b9; /* لون الحدود */
+    border-radius: 8px; /* زوايا دائرية */
+    margin-bottom: 15px; /* زيادة المسافة السفلية */
+    font-size: 16px;
+    background-color: #ecf0f1; /* لون خلفية الحقول */
+    color: #2c3e50; /* لون نص الحقول */
+    transition: border-color 0.3s, box-shadow 0.3s; /* تأثير انتقال */
+}
+
+/* تأثير التركيز على الحقول */
+input[type="text"]:focus, input[type="file"]:focus, #searchInput:focus {
+    border-color: #e74c3c; /* تغيير لون الحدود عند التركيز */
+    box-shadow: 0 0 5px rgba(231, 76, 60, 0.5); /* تأثير ظل عند التركيز */
+    outline: none; /* إزالة الإطار الافتراضي */
+}
+
+/* أزرار */
+button {
+    background: linear-gradient(90deg, #3498db, #2980b9); /* تدرج للأزرار */
+    color: white;
+    border: none;
+    border-radius: 50px; /* زوايا دائرية */
+    padding: 12px; /* يمكنك تعديل هذا لاحقاً */
+    width: 500px; /* تحديد عرض الزر */
+    height: 50px; /* تحديد ارتفاع الزر */
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s; /* تأثير انتقال */
+    font-size: 16px; /* حجم خط الزر */
+}
+
+button:hover {
+    background: linear-gradient(90deg, #2980b9, #3498db); /* تدرج عند المرور */
+    transform: scale(1.05); /* زيادة حجم الزر عند المرور */
+}
+
+
+/* تصميم قائمة الملفات */
+.file-item {
+    background-color: #34495e; /* لون خلفية العناصر */
+    border: 2px solid #2980b9; /* لون الحدود */
+    margin: 10px 0; /* تعديل المسافة العمودية فقط */
+    padding: 20px;
+    border-radius: 8px; /* زوايا دائرية */
+    display: flex;
+    justify-content: space-between; /* توزيع العناصر بشكل متساوٍ */
+    transition: background-color 0.3s; /* تأثير انتقال عند المرور */
+}
+
+.file-item:hover {
+    background-color: #3d566e; /* تغيير اللون عند المرور */
+}
+
+/* تصميم رسائل */
+#message {
+    color: #e74c3c; /* لون الرسائل */
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* تصميم مربع الحوار */
+dialog {
+    padding: 20px; /* زيادة التباعد الداخلي */
+    border: none;
+    border-radius: 10px; /* زوايا دائرية */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* ظل مربع الحوار */
+    background-color: #ecf0f1; /* لون خلفية مربع الحوار */
+    color: #2c3e50; /* لون نص مربع الحوار */
+    font-size: 16px; /* حجم خط مناسب */
+    width: 400px; /* عرض ثابت لمربع الحوار */
+    max-width: 90%; /* الحد الأقصى للعرض ليتناسب مع الشاشات الصغيرة */
+    overflow: auto; /* إظهار التمرير إذا كانت المحتويات كبيرة */
+    position: fixed; /* جعل الموضع ثابتًا */
+    top: 50%; /* تحريك المربع لوسط الشاشة */
+    left: 50%; /* تحريك المربع لوسط الشاشة */
+    transform: translate(-50%, -50%); /* تحريك المربع إلى المنتصف */
+    z-index: 1000; /* وضع المربع فوق العناصر الأخرى */
+    max-height: 80%; /* الحد الأقصى للارتفاع */
+}
+
+/* تصميم زر الإغلاق داخل مربع الحوار */
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.7); /* خلفية داكنة لزر الإغلاق */
+}
+
+dialog .close-btn {
+    position: absolute; /* وضع زر الإغلاق في الزاوية */
+    top: 10px;
+    right: 10px;
+    background-color: #e74c3c; /* لون خلفية زر الإغلاق */
+    color: white; /* لون نص زر الإغلاق */
+    border: none; /* إزالة الحدود */
+    border-radius: 5px; /* زوايا دائرية */
+    padding: 5px 10px; /* تباعد داخلي */
+    cursor: pointer; /* تغيير المؤشر عند المرور فوقه */
+    transition: background-color 0.3s; /* تأثير انتقال عند المرور */
+}
+
+dialog .close-btn:hover {
+    background-color: #c0392b; /* لون داكن عند المرور */
+}
+
+/* تحسين زر البحث */
+#searchButton {
+    padding: 15px 25px; /* زيادة حجم الزر */
+    background: linear-gradient(90deg, #27ae60, #219653); /* تدرج للأزرار */
+    border: none;
+    color: white;
+    border-radius: 8px; /* زوايا دائرية */
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s; /* تأثير انتقال عند المرور */
+}
+
+#searchButton:hover {
+    background: linear-gradient(90deg, #219653, #27ae60); /* تدرج عند المرور */
+    transform: scale(1.05); /* زيادة حجم الزر عند المرور */
+}
